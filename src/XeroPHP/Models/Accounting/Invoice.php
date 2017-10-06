@@ -376,6 +376,16 @@ class Invoice extends Remote\Object
     }
 
     /**
+     * @param Contact $value
+     * @return Invoice
+     */
+    public function removeLineItems()
+    {
+        $this->_data['LineItems'] = new Remote\Collection();
+        return $this;
+    }
+
+    /**
      * @param LineItem $value
      * @return Invoice
      */
